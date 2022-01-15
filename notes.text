@@ -1,0 +1,14 @@
+curl --output <output.txt> -X POST \
+  'https://api-ce.kroger.com/v1/connect/oauth2/token' \
+  -H 'Content-Type: application/x-www-form-urlencoded' \
+  -H 'Authorization: Basic ZWNvc2hvcHBlci05M2UzOWNmNzE5Nzc2M2YyOGI3MDU5MmE4ZjhmN2M2MDc1MzIzOTM3ODkzNzkyMTkwOTQ6TWk1UldyYXdjSmxDbXhfVFNWYUpVRFpSV2xqa3V4R0VTaE1MbFRycw==' \
+  -d 'grant_type=client_credentials&scope=product.compact'
+
+curl -X GET \
+  'https://api.kroger.com/v1/products?filter.brand={{BRAND}}&filter.term={{TERM}}&filter.locationId={{LOCATION_ID}}' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer {{TOKEN}}'
+
+
+token: 
+eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vYXBpLWNlLmtyb2dlci5jb20vdjEvLndlbGwta25vd24vandrcy5qc29uIiwia2lkIjoidnl6bG52Y3dSUUZyRzZkWDBzU1pEQT09IiwidHlwIjoiSldUIn0.eyJhdWQiOiJlY29zaG9wcGVyLTkzZTM5Y2Y3MTk3NzYzZjI4YjcwNTkyYThmOGY3YzYwNzUzMjM5Mzc4OTM3OTIxOTA5NCIsImV4cCI6MTY0MTk5Nzk5NSwiaWF0IjoxNjQxOTk2MTkwLCJpc3MiOiJhcGktY2Uua3JvZ2VyLmNvbSIsInN1YiI6IjQ3ZDAzZjcyLTIzOWUtNWM2My05Y2Q4LTFlN2ViMWI1MTNiZSIsInNjb3BlIjoicHJvZHVjdC5jb21wYWN0IiwiYXV0aEF0IjoxNjQxOTk2MTk1MzgwNjg1NjA0LCJhenAiOiJlY29zaG9wcGVyLTkzZTM5Y2Y3MTk3NzYzZjI4YjcwNTkyYThmOGY3YzYwNzUzMjM5Mzc4OTM3OTIxOTA5NCJ9.QOsC90QbNG-wX3ragOKaK-ohoJn--xOysRXQ0MVzpferV0uoYpb7aLX5Tnv_gdJPok9uJEI7YX3e4DRFlPtf2-9ZaDW8VNgSjNeRcXrJdEUyvYCn7VY0ABsjH6Z4WZygMFkDI4VzfWSDcQPGKUPA_w-Q-gROmzE7iJ793q6mbBlO70x13P0ZrmVPIx-NMd8PvS0ZNaHf-xVRKxE_U5M_ReNwkaFPl0Mkzc_UfRKbqqGlf-x9UwlL1eki_X0u_yrhXe0ju6Vo0GYKBbLnV3lG1nKW4hLzdy6TSyARgd68d5tnspnu91zPALH8eUyXAee2yyqzCeqBwCImDYDkvSZCeg
